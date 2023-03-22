@@ -1,38 +1,22 @@
 #include "main.h"
-#include <stdio.h>
+
 /**
- * print_to_98 - computes absolute value of a number
+ * print_last_digit - determines last value of a number
  * @n : is the number to be determined.
  *
- * Return: returns abs value
+ * Return: returns last value of a number
  */
-
-void print_to_98(int n)
+int print_last_digit(long int n)
 {
-	int i;
-	if (n <= 98)
+	int last_digit;
+
+	if (n < 0)
 	{
-		for (i = n; i <= 98; i++)
-		{
-			printf("%d", i);
-			if (i < 98)
-			{
-				putchar(',');
-				putchar(' ');
-			}
-		}
+		n *= -1;
 	}
-	else
-	{
-		for (i = n; i >= 98; i--)
-		{
-			printf("%d", i);
-			if (i > 98)
-			{
-				putchar(',');
-				putchar(' ');
-			}
-		}
-	}
-	putchar('\n');
+
+	last_digit = (n % 10);
+	_putchar(last_digit + '0');
+
+	return (last_digit);
 }
